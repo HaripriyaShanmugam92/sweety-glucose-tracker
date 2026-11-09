@@ -1,0 +1,29 @@
+{
+  "user": {
+    "name": "Test User",
+    "email": "testuser@example.com",
+    "password": "testpassword123"
+  },
+  "readings": [
+    {
+      "reading_date": "2026-11-08",
+      "time_slot": "Morning fasting",
+      "glucose_value": 100
+    },
+    {
+      "reading_date": "2026-11-08",
+      "time_slot": "After breakfast",
+      "glucose_value": 130
+    },
+    {
+      "reading_date": "2026-11-08",
+      "time_slot": "After lunch",
+      "glucose_value": 120
+    },
+    {
+      "reading_date": "2026-11-08",
+      "time_slot": "After dinner",
+      "glucose_value": 110
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 const express = require("express");
 const pool = require("./db");
 const authRoutes = require("./routes/auth");
+const readingRoutes = require("./routes/readings");
 
 const app = express();
 
@@ -11,6 +12,8 @@ const PORT = 3000;
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
+
+app.use("/api/readings", readingRoutes);
 
 app.get("/", (req, res) => {
   res.send("Sweety Glucose Tracker API is running!");
@@ -42,6 +45,10 @@ app.get("/db-test", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
