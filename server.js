@@ -4,11 +4,13 @@ const express = require("express");
 const pool = require("./db");
 const authRoutes = require("./routes/auth");
 const readingRoutes = require("./routes/readings");
+const cors = require("cors");
 
 const app = express();
 
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);

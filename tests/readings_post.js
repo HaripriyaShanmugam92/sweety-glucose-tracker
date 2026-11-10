@@ -41,7 +41,10 @@ test("Should reject request without glucose value", async () => {
     });
 
   assert.equal(response.status, 400);
-  assert.equal(response.body.message, "Please enter a glucose value.");
+  assert.equal(
+    response.body.errors.glucose_value,
+    "Please enter a glucose value.",
+  );
 });
 
 test("Should reject request with glucose value below 40", async () => {
@@ -56,7 +59,7 @@ test("Should reject request with glucose value below 40", async () => {
 
   assert.equal(response.status, 400);
   assert.equal(
-    response.body.message,
+    response.body.errors.glucose_value,
     "Value must be between 40 and 600 mg/dl.",
   );
 });
@@ -73,7 +76,7 @@ test("Should reject request with glucose value above 600", async () => {
 
   assert.equal(response.status, 400);
   assert.equal(
-    response.body.message,
+    response.body.errors.glucose_value,
     "Value must be between 40 and 600 mg/dl.",
   );
 });
@@ -90,7 +93,7 @@ test("Should reject request with decimal glucose value", async () => {
 
   assert.equal(response.status, 400);
   assert.equal(
-    response.body.message,
+    response.body.errors.glucose_value,
     "Value must be between 40 and 600 mg/dl.",
   );
 });
@@ -106,7 +109,7 @@ test("Should reject request with invalid time slot", async () => {
     });
 
   assert.equal(response.status, 400);
-  assert.equal(response.body.message, "Invalid time slot.");
+  assert.equal(response.body.errors.time_slot, "Invalid time slot.");
 });
 
 test("Should reject request with future date", async () => {
@@ -120,7 +123,10 @@ test("Should reject request with future date", async () => {
     });
 
   assert.equal(response.status, 400);
-  assert.equal(response.body.message, "Date cannot be in the future.");
+  assert.equal(
+    response.body.errors.reading_date,
+    "Date cannot be in the future.",
+  );
 });
 
 test.after(async () => {
