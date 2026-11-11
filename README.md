@@ -88,7 +88,7 @@ sweety-glucose-tracker/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/HaripriyaShanmugam92/sweety-glucose-tracker.git
 cd sweety-glucose-tracker
 ```
 
