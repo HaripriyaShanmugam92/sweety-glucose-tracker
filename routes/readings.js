@@ -210,6 +210,15 @@ router.put("/:id", auth, async (req, res) => {
       partial: true,
     });
 
+    // Stop update if validation errors exist
+    if (Object.keys(errors || {}).length > 0) {
+      return res.status(400).json({
+        message: "Validation failed",
+        errors,
+      });
+    }
+
+    // Check whether there are valid fields to update
     if (Object.keys(validFields).length === 0) {
       return res.status(400).json({
         message: "No valid fields to update.",
@@ -240,11 +249,8 @@ router.put("/:id", auth, async (req, res) => {
     }
 
     return res.status(200).json({
-      message: errors
-        ? "Glucose reading partially updated"
-        : "Glucose reading updated successfully",
+      message: "Glucose reading updated successfully",
       reading: result.rows[0],
-      errors,
     });
   } catch (error) {
     console.error(error);
