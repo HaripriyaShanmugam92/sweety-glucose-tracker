@@ -1,10 +1,13 @@
 {
   "name": "sweety-glucose-tracker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Blood Glucose Tracker built with React, Node.js, Express and PostgreSQL",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --test",
+    "seed": "node database/seed.js"
   },
   "keywords": [],
   "author": "",
