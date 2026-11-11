@@ -50,10 +50,14 @@ A full-stack web application for tracking and monitoring daily blood glucose rea
 ## Project Structure
 
 ```text
+
 sweety-glucose-tracker/
 │
 ├── client/                  # React frontend
 │   └── src/
+│       ├── App.jsx
+│       ├── App.css
+│       └── main.jsx
 │
 ├── database/
 │   ├── schema.sql           # Database table definitions
@@ -75,11 +79,14 @@ sweety-glucose-tracker/
 │   ├── readings_delete.js
 │   └── readings_reports.js
 │
+├── screenshots/             # Application screenshots
+│
 ├── .env.example
 ├── .gitignore
 ├── db.js
 ├── server.js
 ├── package.json
+├── package-lock.json
 └── README.md
 ```
 
@@ -251,3 +258,45 @@ The tests use a separate PostgreSQL test database configured through `TEST_DB_NA
 - Implement pagination for reading history.
 - Add frontend automated tests.
 - Improve report filtering and data visualization.
+
+## Screenshots
+
+### Login Page
+
+![Login Page](screenshots/login.png)
+
+### Signup Page
+
+![Signup Page](screenshots/signup.png)
+
+### Dashboard - Empty State
+
+![Dashboard Empty](screenshots/dashboard-empty.png)
+
+### Dashboard - With Readings
+
+![Dashboard](screenshots/dashboard-readings.png)
+
+### Add Reading
+
+![Add Reading](screenshots/add-reading.png)
+
+### Edit Reading
+
+![Edit Reading](screenshots/edit-reading.png)
+
+### Reading Actions Menu
+
+![Edit and Delete Menu](screenshots/reading-actions-menu.png)
+
+### Daily Report
+
+![Daily Report](screenshots/daily-report.png)
+
+### Month-to-Date Report
+
+![Month-to-Date Report](screenshots/month-to-date-report.png)
+
+### Previous Month Report
+
+![Previous Month Report](screenshots/previous-month-report.png)

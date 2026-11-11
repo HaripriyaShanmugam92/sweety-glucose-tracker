@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "test": "node --test",
+    "test": "node --test --test-concurrency=1 tests/readings_post.js tests/readings_get.js tests/readings_put.js tests/readings_delete.js tests/readings_reports.js",
     "seed": "node database/seed.js"
   },
   "keywords": [],

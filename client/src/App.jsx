@@ -404,7 +404,7 @@ function App() {
               {activePage === "dashboard" && (
                 <>
                   <section className="welcome-section">
-                    <h2>Good afternoon!</h2>
+                    <h2>Welcome back!</h2>
                     <p>Here's your glucose overview.</p>
                   </section>
 
